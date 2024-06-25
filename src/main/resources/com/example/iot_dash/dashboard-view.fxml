@@ -1,0 +1,415 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.web.*?>
+
+<VBox alignment="TOP_CENTER" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="960.0" snapToPixel="false" stylesheets="@style.css" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.iot_dash.DashboardController">
+    <TabPane fx:id="menupane" minHeight="-Infinity" nodeOrientation="LEFT_TO_RIGHT" prefHeight="720.0" prefWidth="960.0" tabClosingPolicy="UNAVAILABLE">
+        <VBox.margin>
+            <Insets bottom="25.0" />
+        </VBox.margin>
+        <Tab fx:id="Home" closable="false">
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                <VBox fx:id="VBox2" minHeight="-Infinity" prefHeight="720.0" prefWidth="960.0" style="-fx-background-color: transparent;">
+                    <padding>
+                        <Insets bottom="25.0" left="25.0" right="25.0" top="25.0" />
+                    </padding>
+                    <GridPane alignment="CENTER" prefHeight="75.0" prefWidth="910.0">
+                        <columnConstraints>
+                            <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" maxWidth="888.4" minWidth="10.0" prefWidth="859.4" />
+                            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="450.0" minWidth="10.0" prefWidth="50.0" />
+                        </columnConstraints>
+                        <rowConstraints>
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        </rowConstraints>
+                        <VBox.margin>
+                            <Insets bottom="25.0" />
+                        </VBox.margin>
+                        <Button fx:id="RefreshButton" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" GridPane.columnIndex="1">
+                            <graphic>
+                                <ImageView fitHeight="45.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
+                                    <Image url="@../../../Images/RefreshIcon.png" />
+                                </ImageView>
+                            </graphic>
+                        </Button>
+                        <Label fx:id="Begroeting" prefHeight="100.0" prefWidth="850.0" text="Hello" textFill="WHITE">
+                            <font>
+                                <Font name="Arial Rounded MT Bold" size="40.0" />
+                            </font>
+                            <GridPane.margin>
+                                <Insets right="25.0" />
+                            </GridPane.margin>
+                        </Label>
+                    </GridPane>
+                    <VBox fx:id="sensorBox" prefHeight="515.0" prefWidth="910.0">
+                        <TabPane fx:id="sensorpane" prefHeight="515.0" prefWidth="910.0" tabClosingPolicy="UNAVAILABLE">
+                            <Tab fx:id="GrondTempTab">
+                                <graphic>
+                                    <VBox fx:id="GridBox_GrondTemp" alignment="TOP_CENTER" prefHeight="50.0">
+                                        <HBox alignment="CENTER" minHeight="-Infinity" prefHeight="50.0">
+                                            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="50.0" text="Grondtemperatuur">
+                                                <font>
+                                                    <Font name="Arial Rounded MT Bold" size="20.0" />
+                                                </font>
+                                            </Label>
+                                        </HBox>
+                                    </VBox>
+                                </graphic>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="500.0" prefWidth="910.0">
+                                    <LineChart fx:id="GrondTempChart" layoutX="5.0" layoutY="7.0" legendVisible="false" maxHeight="-Infinity" maxWidth="910.0" minHeight="-Infinity" prefHeight="445.0" prefWidth="900.0">
+                                        <xAxis>
+                                            <CategoryAxis side="BOTTOM" />
+                                        </xAxis>
+                                        <yAxis>
+                                            <NumberAxis side="LEFT" />
+                                        </yAxis>
+                                    </LineChart>
+                                </AnchorPane>
+                            </Tab>
+                            <Tab fx:id="LuchtTempTab">
+                                <graphic>
+                                    <VBox fx:id="GridBox_LuchtTemp" alignment="TOP_CENTER" prefHeight="50.0">
+                                        <HBox alignment="CENTER" prefHeight="50.0">
+                                            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="50.0" text="Luchttemperatuur">
+                                                <font>
+                                                    <Font name="Arial Rounded MT Bold" size="20.0" />
+                                                </font>
+                                            </Label>
+                                        </HBox>
+                                    </VBox>
+                                </graphic>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                    <LineChart fx:id="LuchtTempChart" layoutX="5.0" layoutY="7.0" legendVisible="false" maxHeight="-Infinity" maxWidth="910.0" minHeight="-Infinity" prefHeight="445.0" prefWidth="900.0">
+                                        <xAxis>
+                                            <CategoryAxis side="BOTTOM" />
+                                        </xAxis>
+                                        <yAxis>
+                                            <NumberAxis side="LEFT" />
+                                        </yAxis>
+                                    </LineChart>
+                                </AnchorPane>
+                            </Tab>
+                            <Tab fx:id="GrondVochtTab">
+                                <graphic>
+                                    <VBox fx:id="GridBox_GrondVocht" alignment="TOP_CENTER" prefHeight="50.0" GridPane.columnIndex="2">
+                                        <GridPane.margin>
+                                            <Insets />
+                                        </GridPane.margin>
+                                        <HBox alignment="CENTER" prefHeight="50.0">
+                                            <Label alignment="CENTER" minHeight="-Infinity" prefHeight="50.0" text="Grondvochtigheid">
+                                                <font>
+                                                    <Font name="Arial Rounded MT Bold" size="20.0" />
+                                                </font>
+                                            </Label>
+                                        </HBox>
+                                    </VBox>
+                                </graphic>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                    <LineChart fx:id="GrondVochtChart" layoutX="5.0" layoutY="7.0" legendVisible="false" maxHeight="-Infinity" maxWidth="910.0" minHeight="-Infinity" prefHeight="445.0" prefWidth="900.0">
+                                        <xAxis>
+                                            <CategoryAxis side="BOTTOM" />
+                                        </xAxis>
+                                        <yAxis>
+                                            <NumberAxis side="LEFT" />
+                                        </yAxis>
+                                    </LineChart>
+                                </AnchorPane>
+                            </Tab>
+                            <Tab fx:id="LuchtVochtTab">
+                                <graphic>
+                                    <VBox fx:id="GridBox_LuchtVocht" alignment="TOP_CENTER" prefHeight="50.0" GridPane.columnIndex="3">
+                                        <HBox alignment="CENTER" prefHeight="50.0">
+                                            <Label alignment="CENTER" minHeight="-Infinity" prefHeight="50.0" text="Luchtvochtigheid">
+                                                <font>
+                                                    <Font name="Arial Rounded MT Bold" size="20.0" />
+                                                </font>
+                                            </Label>
+                                        </HBox>
+                                    </VBox>
+                                </graphic>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                    <LineChart fx:id="LuchtVochtChart" layoutX="5.0" layoutY="7.0" legendVisible="false" maxHeight="-Infinity" maxWidth="910.0" minHeight="-Infinity" prefHeight="445.0" prefWidth="900.0">
+                                        <xAxis>
+                                            <CategoryAxis side="BOTTOM" />
+                                        </xAxis>
+                                        <yAxis>
+                                            <NumberAxis side="LEFT" />
+                                        </yAxis>
+                                    </LineChart>
+                                </AnchorPane>
+                            </Tab>
+                        </TabPane>
+                    </VBox>
+                </VBox>
+            </AnchorPane>
+         <graphic>
+            <Label alignment="CENTER" prefWidth="150.0" text="Home">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="14.0" />
+               </font>
+            </Label>
+         </graphic>
+        </Tab>
+        <Tab fx:id="Menuitem_1" closable="false">
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                <VBox alignment="TOP_CENTER" prefHeight="720.0" prefWidth="960.0">
+                    <opaqueInsets>
+                        <Insets />
+                    </opaqueInsets>
+                    <GridPane alignment="CENTER" prefHeight="400.0" prefWidth="960.0">
+                        <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" minWidth="10.0" prefWidth="430.0" />
+                            <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" minWidth="10.0" prefWidth="430.0" />
+                        </columnConstraints>
+                        <rowConstraints>
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        </rowConstraints>
+                        <VBox fx:id="GridBox_Regen" alignment="TOP_CENTER" prefHeight="300.0" prefWidth="405.0">
+                            <GridPane.margin>
+                                <Insets right="25.0" />
+                            </GridPane.margin>
+                            <HBox prefHeight="50.0" prefWidth="406.0">
+                                <Label alignment="BOTTOM_CENTER" prefHeight="200.0" prefWidth="432.0" text="Regen">
+                                    <font>
+                                        <Font name="Arial Rounded MT Bold" size="20.0" />
+                                    </font>
+                                </Label>
+                            </HBox>
+                            <BarChart fx:id="RegenChart" legendVisible="false" maxWidth="390.0" prefHeight="325.0" prefWidth="390.0">
+                                <xAxis>
+                                    <CategoryAxis side="BOTTOM" />
+                                </xAxis>
+                                <yAxis>
+                                    <NumberAxis prefHeight="170.0" prefWidth="30.0" side="LEFT" />
+                                </yAxis>
+                            </BarChart>
+                        </VBox>
+                        <VBox fx:id="GridBox_Kaart" alignment="CENTER" centerShape="false" prefHeight="300.0" prefWidth="405.0" GridPane.columnIndex="1">
+                            <WebView fx:id="Buienradar" focusTraversable="false" prefHeight="350.0" prefWidth="456.0" />
+                        </VBox>
+                        <opaqueInsets>
+                            <Insets />
+                        </opaqueInsets>
+                        <VBox.margin>
+                            <Insets left="25.0" right="25.0" top="50.0" />
+                        </VBox.margin>
+                    </GridPane>
+                </VBox>
+            </AnchorPane>
+         <graphic>
+            <Label alignment="CENTER" prefWidth="150.0" text="Weervoorspelling">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="14.0" />
+               </font></Label>
+         </graphic>
+        </Tab>
+        <Tab fx:id="Menuitem_3" closable="false">
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                <VBox fx:id="SensAddGrid" alignment="CENTER" prefHeight="664.0" prefWidth="960.0" AnchorPane.bottomAnchor="25.0" AnchorPane.leftAnchor="25.0" AnchorPane.rightAnchor="25.0" AnchorPane.topAnchor="25.0">
+                    <Label alignment="CENTER" minHeight="50.0" prefHeight="50.0" prefWidth="460.0" text="Voeg een nieuwe Sensor Toe" textAlignment="CENTER">
+                        <font>
+                            <Font name="Arial Rounded MT Bold" size="32.0" />
+                        </font>
+                        <VBox.margin>
+                            <Insets top="25.0" />
+                        </VBox.margin>
+                    </Label>
+                    <GridPane alignment="CENTER" prefHeight="590.0">
+                        <columnConstraints>
+                            <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="250.0" />
+                            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" percentWidth="0.0" prefWidth="475.0" />
+                        </columnConstraints>
+                        <rowConstraints>
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="BOTTOM" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="TOP" vgrow="SOMETIMES" />
+                        </rowConstraints>
+                        <VBox.margin>
+                            <Insets left="100.0" right="100.0" top="50.0" />
+                        </VBox.margin>
+                        <Label text="Type">
+                            <font>
+                                <Font name="Arial Rounded MT Bold" size="14.0" />
+                            </font>
+                            <GridPane.margin>
+                                <Insets bottom="15.0" />
+                            </GridPane.margin>
+                        </Label>
+                        <Label text="Locatiebeschrijving" GridPane.rowIndex="1">
+                            <font>
+                                <Font name="Arial Rounded MT Bold" size="14.0" />
+                            </font>
+                            <GridPane.margin>
+                                <Insets />
+                            </GridPane.margin>
+                        </Label>
+                        <Label text="Diepte" GridPane.rowIndex="2">
+                            <font>
+                                <Font name="Arial Rounded MT Bold" size="14.0" />
+                            </font>
+                            <GridPane.margin>
+                                <Insets top="15.0" />
+                            </GridPane.margin>
+                        </Label>
+                        <TextField fx:id="SensorType" prefHeight="50.0" prefWidth="400.0" GridPane.columnIndex="1">
+                            <font>
+                                <Font name="Arial Rounded MT Bold" size="14.0" />
+                            </font>
+                            <GridPane.margin>
+                                <Insets left="25.0" right="50.0" />
+                            </GridPane.margin>
+                        </TextField>
+                        <TextField fx:id="SensorLocDescr" prefHeight="50.0" prefWidth="400.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                            <font>
+                                <Font name="Arial Rounded MT Bold" size="14.0" />
+                            </font>
+                            <GridPane.margin>
+                                <Insets left="25.0" right="50.0" />
+                            </GridPane.margin>
+                        </TextField>
+                        <TextField fx:id="SensorDiep" prefHeight="51.0" prefWidth="400.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                            <font>
+                                <Font name="Arial Rounded MT Bold" size="14.0" />
+                            </font>
+                            <GridPane.margin>
+                                <Insets left="25.0" right="50.0" />
+                            </GridPane.margin>
+                        </TextField>
+                    </GridPane>
+               <Label fx:id="WarningLabel">
+                  <VBox.margin>
+                     <Insets bottom="50.0" />
+                  </VBox.margin>
+               </Label>
+                    <Button fx:id="AddButton" minHeight="50.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="180.0" text="Toevoegen">
+                        <VBox.margin>
+                            <Insets bottom="25.0" />
+                        </VBox.margin>
+                  <font>
+                     <Font name="Arial Rounded MT Bold" size="12.0" />
+                  </font>
+                    </Button>
+                </VBox>
+            </AnchorPane>
+         <graphic>
+            <Label alignment="CENTER" prefWidth="150.0" text="Sensor Toevoegen">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="14.0" />
+               </font></Label>
+         </graphic>
+        </Tab>
+        <Tab fx:id="Credits" closable="false">
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+            <children>
+               <HBox fx:id="CreditsHBox" alignment="CENTER" prefHeight="670.0" prefWidth="960.0" AnchorPane.bottomAnchor="25.0" AnchorPane.leftAnchor="25.0" AnchorPane.rightAnchor="25.0" AnchorPane.topAnchor="25.0">
+                  <children>
+                     <VBox alignment="TOP_CENTER" maxWidth="-Infinity" prefWidth="430.0">
+                        <HBox.margin>
+                           <Insets bottom="25.0" top="25.0" />
+                        </HBox.margin>
+                        <padding>
+                           <Insets right="12.5" />
+                        </padding>
+                        <children>
+                           <Label alignment="CENTER" prefHeight="75.0" prefWidth="418.0" text="Mede mogelijk gemaakt door:">
+                               <font>
+                                   <Font name="Arial Rounded MT Bold" size="28.0" />
+                               </font>
+                              <VBox.margin>
+                                 <Insets bottom="25.0" />
+                              </VBox.margin>
+                           </Label>
+                           <ImageView fitHeight="225.0" fitWidth="225.0" pickOnBounds="true" preserveRatio="true">
+                              <VBox.margin>
+                                 <Insets bottom="50.0" />
+                              </VBox.margin>
+                              <image>
+                                 <Image url="@../../../Images/GCicon.png" />
+                              </image>
+                           </ImageView>
+                           <ImageView fitHeight="225.0" fitWidth="225.0" pickOnBounds="true" preserveRatio="true">
+                              <image>
+                                 <Image url="@../../../Images/REicon.png" />
+                              </image>
+                           </ImageView>
+                        </children>
+                     </VBox>
+                     <Rectangle arcHeight="5.0" arcWidth="5.0" height="590.0" stroke="#ffffff00" strokeType="INSIDE" width="2.0" />
+                     <VBox alignment="TOP_CENTER" maxWidth="-Infinity" prefHeight="200.0" prefWidth="430.0">
+                        <HBox.margin>
+                           <Insets bottom="25.0" top="25.0" />
+                        </HBox.margin>
+                        <padding>
+                           <Insets left="12.5" />
+                        </padding>
+                        <children>
+                           <Label alignment="CENTER" prefHeight="75.0" prefWidth="418.0" text="Leden van het project: IoT Weerstation, Groep 1">
+                              <font>
+                                 <Font name="Arial Rounded MT Bold" size="17.0" />
+                              </font>
+                           </Label>
+                           <Label prefHeight="27.0" prefWidth="400.0" text="Jan Looman">
+                              <font>
+                                 <Font name="Arial Rounded MT Bold" size="12.0" />
+                              </font>
+                           </Label>
+                           <Label prefHeight="27.0" prefWidth="400.0" text="Kevin Rootinck">
+                               <font>
+                                   <Font name="Arial Rounded MT Bold" size="12.0" />
+                               </font>
+                           </Label>
+                           <Label prefHeight="27.0" prefWidth="400.0" text="Lars Daams">
+                               <font>
+                                   <Font name="Arial Rounded MT Bold" size="12.0" />
+                               </font>
+                           </Label>
+                           <Label prefHeight="27.0" prefWidth="400.0" text="Viktor Hoebee">
+                               <font>
+                                   <Font name="Arial Rounded MT Bold" size="12.0" />
+                               </font>
+                           </Label>
+                        </children>
+                     </VBox>
+                  </children></HBox>
+            </children></AnchorPane>
+         <graphic>
+             <Label alignment="CENTER" prefWidth="150.0" text="Credits">
+                 <font>
+                     <Font name="Arial Rounded MT Bold" size="14.0" />
+                 </font>
+             </Label>
+         </graphic>
+        </Tab>
+        <Tab fx:id="Logout" closable="false">
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                <Label fx:id="logoutLabel" alignment="CENTER" layoutX="280.0" layoutY="170.0" prefHeight="50.0" prefWidth="400.0" text="Weet je het zeker?">
+                    <font>
+                        <Font name="Arial Rounded MT Bold" size="22.0" />
+                    </font>
+                </Label>
+                <Button fx:id="LogoutButton" alignment="CENTER" layoutX="405.0" layoutY="320.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#handleLogoutButtonAction" prefHeight="50.0" prefWidth="150.0" text="Log uit">
+               <graphic>
+                   <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                       <Image url="@../../../Images/powerbutton.png" />
+                   </ImageView>
+               </graphic>
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="14.0" />
+               </font></Button>
+            </AnchorPane>
+         <graphic>
+            <Label alignment="CENTER" prefWidth="150.0" text="Log uit">
+                <font>
+                    <Font name="Arial Rounded MT Bold" size="14.0" />
+                </font>
+            </Label>
+         </graphic>
+        </Tab>
+    </TabPane>
+</VBox>

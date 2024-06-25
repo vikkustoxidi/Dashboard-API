@@ -1,0 +1,159 @@
+.root {
+    -fx-background-color:   linear-gradient(to bottom right, #003FFF, transparent),
+                            linear-gradient(to bottom left, #00A0FF, transparent),
+                            linear-gradient(to top right, #BF40E4, transparent),
+                            linear-gradient(to top left, #00FF95, transparent);
+}
+
+#Begroeting {
+    -fx-font-size: 44px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #ffffff;
+}
+
+#Buienradar {
+    -fx-background-radius: 25px;
+}
+
+#RefreshButton {
+    -fx-background-color: #ffffff;
+    -fx-background-radius: 15px;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.3), 5, 0, 0, 1);
+}
+
+.tab-pane > .tab-header-area > .tab-header-background {
+    -fx-background-color: transparent;
+}
+
+#menupane > .tab-header-area > .headers-region > .tab {
+    -fx-background-color: #ffffff;
+    -fx-pref-height: 50px;
+    -fx-background-radius: 0 0 25px 25px;
+}
+
+#sensorpane > .tab-header-area > .headers-region > .tab {
+    -fx-background-color: #ffffff;
+    -fx-pref-height: 50px;
+    -fx-background-radius: 25px 25px 0 0;
+}
+
+#menupane > .tab-header-area > .headers-region > .tab:selected {
+    -fx-border-color: #000000;
+    -fx-border-width: 3 0 0 0;
+}
+
+#sensorpane > .tab-header-area > .headers-region > .tab:selected {
+    -fx-border-color: #000000;
+    -fx-border-width: 0 0 3 0;
+}
+
+#menupane:focused,
+#sensorpane:focused {
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
+}
+
+#loginButton,
+#AddButton {
+    -fx-background-color: #0094FF;
+    -fx-background-radius: 25px;
+    -fx-text-fill: #ffffff;
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-padding: 10px;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.3), 5, 0, 0, 1);
+}
+
+#loginButton:hover,
+#AddButton:hover {
+    -fx-background-color: #0077CC;
+    -fx-cursor: hand;
+}
+
+#loginButton:pressed,
+#AddButton:pressed {
+    -fx-background-color: #005599;
+}
+
+#LogoutButton {
+    -fx-background-color: #ff2121;
+    -fx-background-radius: 25px;
+    -fx-text-fill: #ffffff;
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-padding: 10px;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.3), 5, 0, 0, 1);
+}
+
+#LogoutButton:hover {
+    -fx-background-color: #da0000;
+    -fx-cursor: hand;
+}
+
+#LogoutButton:pressed {
+    -fx-background-color: #ab0202;
+}
+
+#Menuitem_1,
+#Menuitem_2,
+#Menuitem_3,
+#Menuitem_4 {
+    -fx-background-color: #FFFFFF;
+}
+
+#dashboardGrid,
+#usernameField,
+#passwordField,
+#CredBox,
+#GridBox_Regen,
+#GridBox_Kaart,
+#logoutLabel,
+#sensorBox,
+#SensAddGrid,
+#SensorDiep,
+#SensorLocDescr,
+#SensorType,
+#CreditsHBox {
+    -fx-background-color: #ffffff;
+    -fx-background-radius: 25px;
+    -fx-font-size: 18px;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.3), 5, 0, 0, 1);
+}
+
+#Menuitem_1:hover,
+#Menuitem_2:hover,
+#Menuitem_3:hover,
+#Menuitem_4:hover,
+#RefreshButton:hover,
+#menupane > .tab-header-area > .headers-region > .tab:hover,
+#sensorpane > .tab-header-area > .headers-region > .tab:hover {
+    -fx-background-color: #f0f0f0;
+    -fx-cursor: hand;
+}
+
+#Menuitem_1:pressed,
+#Menuitem_2:pressed,
+#Menuitem_3:pressed,
+#Menuitem_4:pressed,
+#RefreshButton:pressed,
+#menupane > .tab-header-area > .headers-region > .tab:pressed,
+#sensorpane > .tab-header-area > .headers-region > .tab:pressed {
+    -fx-background-color: #e0e0e0;
+}
+.chart-plot-background, tab-pane, .chart-line-symbol {
+    -fx-background-color: transparent;
+}
+
+.selector {
+    property: value;
+}
+
+.chart-series-line, .chart-bar {
+    -fx-stroke: #0094FF;
+    -fx-bar-fill: #0094FF;
+}
+
+.bar-chart {
+    -fx-bar-gap: 0.05em;
+    -fx-category-gap: 0.25em;
+}
